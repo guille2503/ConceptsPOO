@@ -4,7 +4,7 @@ using System.Text;
 
 namespace conceptsPOO
 {
-    class Date
+    public class Date
     {
 
         private int _year;
