@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace conceptsPOO
 {
@@ -16,7 +17,8 @@ namespace conceptsPOO
                 IsActive = true,
                 Salary = 1815453.2M
             };
-            Console.WriteLine(employee1);
+            //Console.WriteLine(employee1);
+
             Employee employee2 = new CommissionEmployee()
             {
                 Id = 2020,
@@ -28,11 +30,55 @@ namespace conceptsPOO
                 Sales = 320000000M,
                 CommissionPorcentaje = 0.03F
             };
-            Console.WriteLine(employee2);
+            //Console.WriteLine(employee2);
+
+            Employee employee3 = new HourlyEmployee()
+            {
+                Id = 3030,
+                FirstName = "Gonzalo",
+                LastName = "Cardona",
+                BirthDate = new Date(1995, 5, 23),
+                HiringDate = new Date(2022, 2, 15),
+                IsActive = true,
+                Hours = 123.5F,
+                HourValue = 12356.56M
+            };
+            //Console.WriteLine(employee3);
+
+            Employee employee4 = new BaceCommissionEmployee()
+            {
+                Id = 4040,
+                FirstName = "Juan",
+                LastName = "Molina",
+                BirthDate = new Date(1995, 5, 23),
+                HiringDate = new Date(2022, 2, 15),
+                IsActive = true,
+                Base = 860678.45M,
+                Sales = 58000000M,
+                CommissionPorcentaje = 0.015F
+            };
+            //Console.WriteLine(employee4);
+
+            ICollection<Employee> employees = new List<Employee>()
+            {
+                employee1, employee2, employee3, employee4
+            };
+            decimal payroll = 0;
+
+            foreach(Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+                payroll += employee.GetValueToPay();
+            }
+            Console.WriteLine("                     =====================");
+            Console.WriteLine($"Total                  {$"{payroll:C2}",15} ");
+
 
             Console.WriteLine("Finalizado");
             Console.ReadKey();
         }
+
+         
 
         
     }
