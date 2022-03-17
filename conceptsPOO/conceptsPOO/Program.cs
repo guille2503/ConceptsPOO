@@ -74,6 +74,25 @@ namespace conceptsPOO
             Console.WriteLine($"Total                  {$"{payroll:C2}",15} ");
 
 
+            Invoice invoice = new Invoice()
+            {
+                Description = "Iphone 13 ",
+                Id = 1,
+                Price = 5300000M,
+                Quantity = 6
+            };
+
+            Invoice invoice2 = new Invoice()
+            {
+                Description = "Posta premiun ",
+                Id = 2,
+                Price = 32000M,
+                Quantity = 17.5F
+            };
+
+            Console.WriteLine(invoice);
+            Console.WriteLine(invoice2);
+
             Console.WriteLine("Finalizado");
             Console.ReadKey();
         }
